@@ -175,9 +175,7 @@ void main()
     std::shared_ptr<GUIButton> box3 = layer->CreateButton(0, 0, 4, 1, "Test", &tst, &gst, &buttonAction);
 	std::shared_ptr<TextField> textBox1 = layer->CreateTextField(250, 350, 120, 40, locale.GetInvite("print"), &tst, &gst);
 	std::shared_ptr<GUILabel> label1 = layer->CreateLabel(5, 10, 100, 40, "READY...", &tst, &gst);
-	std::shared_ptr<GUISlider> slider1 = layer->CreateSlider(0, 0, 150, 20, 35, 38, &gst, 0, 100, 20, &onSliderMove);
 	label1->SetHorizontalAlignment(Alignment::LEFT);
-	statusBar->AddElement(slider1);
     statusBar->AddElement(box1);
     statusBar->AddElement(box2);
     statusBar->AddElement(box3);
