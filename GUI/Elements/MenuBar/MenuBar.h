@@ -1,41 +1,41 @@
-#pragma once
+п»ї#pragma once
 #include "../../GUI/GUIBox.h"
 #include <vector>
 #include <string.h>
 #include "../../Observable.h"
-/*! Класс MenuBar создает меню, 
-кнопки добавляются слева направо впритык друг к другу
+/*! РљР»Р°СЃСЃ MenuBar СЃРѕР·РґР°РµС‚ РјРµРЅСЋ,
+РєРЅРѕРїРєРё РґРѕР±Р°РІР»СЏСЋС‚СЃСЏ СЃР»РµРІР° РЅР°РїСЂР°РІРѕ РІРїСЂРёС‚С‹Рє РґСЂСѓРі Рє РґСЂСѓРіСѓ
 */
-class MenuBar : public GUIBox 
+class MenuBar : public GUIBox
 {
 private:
-	std::vector<std::shared_ptr <GUIBox> > buttonVect; ///< вектор, содержащий все кнопки
+    std::vector<std::shared_ptr <GUIBox> > buttonVect; ///< РІРµРєС‚РѕСЂ, СЃРѕРґРµСЂР¶Р°С‰РёР№ РІСЃРµ РєРЅРѕРїРєРё
 
-	int buttonPosHelp=0; ///< определяет смещение кнопки относительно предыдущей
-	int buttonSizeHelp = 200; ///< размер кнопки
-	GUILayer * layer;
-	friend class GUILayer;
-	TextStyle *tstyle;///< стиль текста
-	Text text; ///< текст
-	RectangleShape * staticBar;///< подложка под кнопки
+    int buttonPosHelp = 0; ///< РѕРїСЂРµРґРµР»СЏРµС‚ СЃРјРµС‰РµРЅРёРµ РєРЅРѕРїРєРё РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ РїСЂРµРґС‹РґСѓС‰РµР№
+    int buttonSizeHelp = 200; ///< СЂР°Р·РјРµСЂ РєРЅРѕРїРєРё
+    GUILayer * layer;
+    friend class GUILayer;
+    TextStyle *tstyle;///< СЃС‚РёР»СЊ С‚РµРєСЃС‚Р°
+    Text text; ///< С‚РµРєСЃС‚
+    RectangleShape * staticBar;///< РїРѕРґР»РѕР¶РєР° РїРѕРґ РєРЅРѕРїРєРё
 
 protected:
-	/// Конструктор
-	MenuBar(RenderWindow* renderWindow_, float x, float y, float width, float height,
-		std::string text, TextStyle *tstyle, GUIStyle *gstyle,
-		float leftBorder, float rightBorder, Color staticBarColor, GUILayer* layer); 
-	/// Переопределяем функцию Draw()
-	virtual void Draw() override; 
+    /// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+    MenuBar(RenderWindow* renderWindow_, float x, float y, float width, float height,
+        std::string text, TextStyle *tstyle, GUIStyle *gstyle,
+        float leftBorder, float rightBorder, Color staticBarColor, GUILayer* layer);
+    /// РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј С„СѓРЅРєС†РёСЋ Draw()
+    virtual void Draw() override;
 public:
-	void addButton(std::string name , void(*action)());///< метод создания новой кнопки на меню баре
-	
-	virtual void SetPosition(Vector2f position_) override;///< Переопределяем функцию SetPosition(Vector2f position_)
-	
-	void SetPosition(Vector2f position_, Vector2f coefficient_) override;///< Переопределяем функцию SetPosition(Vector2f position_, Vector2f coefficient_)
-	virtual void SetSize(Vector2f size_) override;///< Переопределяем функцию SetSize(Vector2f size_)
-	void SetSize(Vector2f size_, Vector2f coefficient_) override;///< Переопределяем функцию SetSize(Vector2f size_, Vector2f coefficient_
+    void addButton(std::string name, void(*action)());///< РјРµС‚РѕРґ СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕР№ РєРЅРѕРїРєРё РЅР° РјРµРЅСЋ Р±Р°СЂРµ
+
+    virtual void SetPosition(Vector2f position_) override;///< РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј С„СѓРЅРєС†РёСЋ SetPosition(Vector2f position_)
+
+    void SetPosition(Vector2f position_, Vector2f coefficient_) override;///< РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј С„СѓРЅРєС†РёСЋ SetPosition(Vector2f position_, Vector2f coefficient_)
+    virtual void SetSize(Vector2f size_) override;///< РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј С„СѓРЅРєС†РёСЋ SetSize(Vector2f size_)
+    void SetSize(Vector2f size_, Vector2f coefficient_) override;///< РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј С„СѓРЅРєС†РёСЋ SetSize(Vector2f size_, Vector2f coefficient_
 
 
-	
+
 };
 
